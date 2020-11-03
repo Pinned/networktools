@@ -51,7 +51,7 @@
         <div>
             <div class="row justify-content-md-center">
                 <div class="col-md-8" v-if="!authorized">
-                    <a class="btn btn-primary btn-lg btn-block" href="https://cloud.digitalocean.com/v1/oauth/authorize?response_type=token&client_id=26f89d02b0ba9207e4d57406bdf5b6c1c69cb99dd05855de58a3c41446ecad2c&redirect_uri=https://pinned.github.io/networktools/&scope=read write"
+                    <a class="btn btn-primary btn-lg btn-block" href="https://cloud.digitalocean.com/v1/oauth/authorize?response_type=token&client_id=26f89d02b0ba9207e4d57406bdf5b6c1c69cb99dd05855de58a3c41446ecad2c&redirect_uri=https://pinned.github.io/networktools&scope=read%20write"
                         role="button">{{ $t("message.authorize") }}</a>
                 </div>
                 <div class="col-md-10" v-if="authorized">
