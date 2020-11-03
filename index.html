@@ -42,9 +42,6 @@
 </head>
 
 <body class="bg-light">
-    <nav class="navbar navbar-light bg-light d-flex flex-row-reverse">
-        <a class="navbar-text" href="https://github.com/ozonni/do-vpn">View on GitHub</a>
-    </nav>
     <main role="main" class="container" v-cloak id="app">
         <div class="py-4 text-center">
             <i class="material-icons md-48">vpn_lock</i>
@@ -54,7 +51,7 @@
         <div>
             <div class="row justify-content-md-center">
                 <div class="col-md-8" v-if="!authorized">
-                    <a class="btn btn-primary btn-lg btn-block" href="https://cloud.digitalocean.com/v1/oauth/authorize?response_type=token&client_id=a74eb85bd3567014726fbf26a6f713cbf64c28224d5b838b8abbc9706fcec178&redirect_uri=https://ozonni.github.io/do-vpn/&scope=read write"
+                    <a class="btn btn-primary btn-lg btn-block" href="https://cloud.digitalocean.com/v1/oauth/authorize?response_type=token&client_id=a74eb85bd3567014726fbf26a6f713cbf64c28224d5b838b8abbc9706fcec178&redirect_uri=https://pinned.github.io/networktools/&scope=read write"
                         role="button">{{ $t("message.authorize") }}</a>
                 </div>
                 <div class="col-md-10" v-if="authorized">
@@ -160,7 +157,7 @@
 
         var generateRandomString = function () {
             var text = "";
-            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var possible = "AaBCrDEFsGHIJKLxfMNOPQRSTUVWgXYZabcxdefghijklmnopqrstuvwxyz0123456789";
 
             for (var i = 0; i < 8; i++)
                 text += possible.charAt(Math.floor(Math.random() * possible.length));
@@ -189,24 +186,6 @@
                 account you can proceed by clicking on
                 <b>Authorize</b> otherwise follow this referral
                 <a href="https://m.do.co/c/0e1ce5621123" target="_blank">link</a> to create a new account (you will get $10 in credit, will be enough for 2 month).`
-                }
-            },
-            'ru': {
-                message: {
-                    doVPN: 'Cоздай собственный VPN',
-                    authorize: 'Зайти через DigitalOcean',
-                    howTo: 'Как настроить VPN на устройстве',
-                    createVPN: 'Создать VPN',
-                    selectRegion: 'Выберите регион',
-                    refresh: 'обновить',
-                    takes55Sec: 'Занимает ~55сек. чтобы создать IP адрес',
-                    useAutoSetup: 'Автонастройка, нажмите на',
-                    intro: `Ниже вы можете видеть список созданных VPN серверов. Вы можете удалять их, а также создавать новые. При создании VPN сервера, в вашем аккаунте DigitalOcean создается новый сервер с 1 Tерабайтом доступного трафика.
-                Каждый VPN сервер стоит <a href="https://www.digitalocean.com/pricing" target="_blank">$5 в месяц</a>. VPN аккаунт может быть использован с разных устройств.`,
-                    welcome: `Используя <a href="https://www.digitalocean.com" target="_blank">DigitalOcean</a> вы можете создать свой собственный приватный VPN за 5$ в месяц.
-                Вы платите <b>только за сервера</b> DigitalOcean. Мы <b>НЕ</b> анализируем ваш трафик и <b>НЕ</b> храним ваши данные.
-                Мы просто делаем настройку VPN доступной для каждого. Нажмите на кнопку <b>Авторизации</b> если у вас уже есть аккаунт в DigitalOcean.
-                Иначе используйте <a href="https://m.do.co/c/0e1ce5621123" target="_blank">реферальную ссылку</a> что бы создать новый аккаунт (вы получите $10 в подарок, этого хватит на 2 месяца использования).`
                 }
             }
         };
