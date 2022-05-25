@@ -143,12 +143,12 @@
         var params = new URLSearchParams(window.location.hash.substr(1))
         var token = params.get('access_token');
 
-        Vue.http.interceptors.push((request, next) => {
-            NProgress.start();
-            next((response) => {
-                NProgress.done();
-            });
-        });
+//         Vue.http.interceptors.push((request, next) => {
+//             NProgress.start();
+//             next((response) => {
+//                 NProgress.done();
+//             });
+//         });
 
         if (token) {
             Vue.http.headers.common['Authorization'] = 'Bearer ' + token;
